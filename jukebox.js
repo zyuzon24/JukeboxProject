@@ -1,17 +1,20 @@
+class JukeBox{
+  this.playlist = [{},{},{}];
+  this.play = document.getElementById("play").addEventListener("click", play());
+  this.pause = document.getElementById("pause").addEventListener("click", pause());
+  this.skip = document.getElementById("skip").addEventListener("click", skip());
+  this.loop = document.getElementById("loop").addEventListener("click", loop());
+  this.select = document.getElementById("select").addEventListener("click", select());
 
-//ID for audio element
-var music = document.getElementById("music");
-//ID for play button
-var pButton = document.getElementById("play")
-function playAudio(){
-        music.play();
+  //Play()
+  function playAudio(){
+          music.play();
+  }
+  //Pause()
+  function pauseAudio(){
+      music.pause()
+  }
+  //Skip()
+  //Stop()
+  //Loop()
 }
-
-function pauseAudio(){
-    music.pause()
-}
-//Play()
-//Pause()
-//Skip()
-//Stop()
-//Loop()
