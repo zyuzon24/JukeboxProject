@@ -1,8 +1,9 @@
 #juke{
-  position:absolute;
+  display: block;
+  /*position:absolute;*/
   margin-left: auto;
   margin-right: auto;
-  height: 100%;
+  width: 50%;
   z-index: 1;
 }
 
@@ -21,11 +22,11 @@
 #songs{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     height: 60%;
     position: absolute;
     top: 20%;
-    right: 40%;
+    left: 10%;
     z-index: 2;
 }
 
