@@ -5,7 +5,11 @@ class JukeBox{
             {name: "Never Gonna Give You Up - Rick Astley", source: "Rick Astley - Never Gonna Give You Up.mp3"},
             {name: "Every Breath You Take - The Police", source: "The Police - Every Breath You Take.mp3"}
         ];
+        
+        this.currentSong = 0;
+        
     }
+    
 }
 
 
