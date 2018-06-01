@@ -12,14 +12,18 @@ class JukeBox{
     
 }
 
+var audio = document.getElementById("jukebox");
 
 document.getElementById("play").addEventListener("click", function(){
-  console.log("this is play");
+    console.log("this is play");
+    if(audio.paused){
+        audio.play();
+    } else {
+        audio.pause();
+    }
 });
 
-document.getElementById("pause").addEventListener("click",  function(){
-  console.log("this is pause");
-});
+
 document.getElementById("skip").addEventListener("click",  function(){
   console.log("this is skip");
 });
