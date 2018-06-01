@@ -7,12 +7,13 @@ class JukeBox{
         ];
         
         this.currentSong = 0;
-        
     }
     
 }
 
 var audio = document.getElementById("jukebox");
+var displayName = document.getElementById("currentSong");
+var myJuke = new JukeBox();
 
 document.getElementById("play").addEventListener("click", function(){
     console.log("this is play");
@@ -26,18 +27,46 @@ document.getElementById("play").addEventListener("click", function(){
 
 document.getElementById("skip").addEventListener("click",  function(){
   console.log("this is skip");
-     audio.pause();
-     currentIndex++;
-     if(playlist.length == currentSong){
-        currentSong = 0;
-     };
-     audio.src = playlist[currentSong];
+ 
+     myJuke.currentSong = (myJuke.currentSong + 1) % myJuke.playlist.length;
+     console.log(myJuke.playlist[myJuke.currentSong]);
+     audio.src = myJuke.playlist[myJuke.currentSong].source;
+     audio.load();
      audio.play();
+    
+     displayName.textContent= myJuke.playlist[myJuke.currentSong].name;
 });
+
 document.getElementById("loop").addEventListener("click",  function(){
   console.log("this is loop");
+  if(audio.loop === true){
+      audio.loop = false;
+  } else {
+      audio.loop = true;
+  }
+
 });
 document.getElementById("select").addEventListener("click",  function(){
   console.log("this is select");
+  var input = prompt("Enter Song Number");
+  if (input < 1 || input > myJuke.playlist.length){
+      alert("That number is out of range");
+  }
+  else{
+      myJuke.currentSong = input - 1;
+      audio.src = myJuke.playlist[myJuke.currentSong].source;
+      audio.load();
+      audio.play();
+      displayName.textContent= myJuke.playlist[myJuke.currentSong].name;
+  }
 });
 
+audio.onended = function(){
+    if (audio.loop == false){
+        myJuke.currentSong = (myJuke.currentSong + 1) % myJuke.playlist.length;
+        audio.src = myJuke.playlist[myJuke.currentSong].source;
+        audio.load();
+        audio.play();
+        displayName.textContent= myJuke.playlist[myJuke.currentSong].name;
+    }
+}
