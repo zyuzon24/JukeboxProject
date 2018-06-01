@@ -26,6 +26,7 @@ document.getElementById("play").addEventListener("click", function(){
 
 document.getElementById("skip").addEventListener("click",  function(){
   console.log("this is skip");
+  this.currentSong++;
 });
 document.getElementById("loop").addEventListener("click",  function(){
   console.log("this is loop");
