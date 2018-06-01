@@ -18,6 +18,17 @@
 
 }
 
+#songs{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60%;
+    position: absolute;
+    top: 20%;
+    right: 40%;
+    z-index: 2;
+}
+
 button{
   background-color: red;
   padding: 20px;
