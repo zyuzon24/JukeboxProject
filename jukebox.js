@@ -7,14 +7,22 @@ class JukeBox{
   this.select = document.getElementById("select").addEventListener("click", select());
 
   //Play()
-  function playAudio(){
+  function play(){
           music.play();
   }
   //Pause()
-  function pauseAudio(){
+  function pause(){
       music.pause()
   }
   //Skip()
+  function skip(){
+  }
   //Stop()
+  function stop(){
+
+
+  }
   //Loop()
+  function loop(){
+  }
 }
