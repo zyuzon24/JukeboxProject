@@ -61,7 +61,20 @@ document.getElementById("select").addEventListener("click",  function(){
   }
 });
 
+document.getElementById("faster").addEventListener("click",  function(){
+  console.log("this is faster");
+  audio.playbackRate = audio.playbackRate + 0.25;
+});
+
+document.getElementById("normal").addEventListener("click",  function(){
+  console.log("this is normal");
+  audio.playbackRate = 1;
+});
+
+
+
 audio.onended = function(){
+	audio.playbackrate = 1;
     if (audio.loop == false){
         myJuke.currentSong = (myJuke.currentSong + 1) % myJuke.playlist.length;
         audio.src = myJuke.playlist[myJuke.currentSong].source;
